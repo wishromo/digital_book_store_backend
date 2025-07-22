@@ -14,7 +14,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-app.use(cors({ origin: 'http://localhost:5173', methods: ['GET', 'POST', 'PUT', 'DELETE'], credentials: true }));
+app.use(cors({ origin: 'https://digital-book-store-fronend.vercel.app', methods: ['GET', 'POST', 'PUT', 'DELETE'], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));

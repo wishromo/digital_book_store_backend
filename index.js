@@ -57,6 +57,12 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 const app = express();
+// --- ADD THIS SIMPLE TEST ROUTE HERE (Place it before app.use(express.json());) ---
+app.get('/ping', (req, res) => {
+  console.log('--- PING ROUTE HIT! ---'); // This message is crucial for logs
+  res.status(200).send('Pong! Backend is alive and responding.');
+});
+// ---------
 
 // Middleware setup
 app.use(express.json()); // This line appears twice, one is enough.

@@ -77,8 +77,8 @@ export default app;
 
 // Start the server ONLY if not in a test environment
 if (process.env.NODE_ENV !== "test") {
-  app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server is running on port ${process.env.PORT || 5000}`); // Corrected port in console log
+  app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on port ${process.env.PORT || 3000}`); // Corrected port in console log
   });
 }
 

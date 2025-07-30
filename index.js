@@ -49,7 +49,7 @@ import bookRoutes from './routes/booksRoutes.js';
 import membrRoutes from './routes/membrRoutes.js';
 
 dotenv.config();
-
+const PORT = process.env.PORT || 3000;
 // CONDITIONAL DATABASE CONNECTION:
 // Connect to the real database ONLY if not in a test environment
 if (process.env.NODE_ENV !== "test") {
@@ -77,8 +77,10 @@ export default app;
 
 //Start the server ONLY if not in a test environment
 if (process.env.NODE_ENV !== "test") {
-  app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server is running on port ${process.env.PORT || 3000}`); // Corrected port in console log
+    app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`); 
+  // app.listen(process.env.PORT || 3000, () => {
+    // console.log(`Server is running on port ${process.env.PORT || 3000}`); // Corrected port in console log
   });
 }
 
